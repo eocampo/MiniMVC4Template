@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMVC4Template", "MiniMVC4Template\MiniMVC4Template.csproj", "{9552C146-57B2-47F2-830D-AEF77FFE47F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9552C146-57B2-47F2-830D-AEF77FFE47F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9552C146-57B2-47F2-830D-AEF77FFE47F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9552C146-57B2-47F2-830D-AEF77FFE47F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9552C146-57B2-47F2-830D-AEF77FFE47F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
