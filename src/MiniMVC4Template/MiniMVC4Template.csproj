@@ -58,6 +58,8 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CommonDlls\System.Web.Helpers.dll" />
+    <Content Include="CommonDlls\System.Web.Mvc.dll" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
