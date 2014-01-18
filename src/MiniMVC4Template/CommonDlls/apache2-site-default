@@ -1,0 +1,62 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+
+	<IfModule !mod_mono.c>
+          LoadModule mono_module /usr/lib/apache2/modules/mod_mono.so
+        </IfModule>        
+
+        MonoServerPath localhost "/usr/bin/mod-mono-server4"
+        MonoApplications localhost "/:/var/www/"
+        
+        <Location "/">
+           Allow from all
+           Order allow,deny
+           MonoSetServerAlias localhost
+           SetHandler mono
+        </Location>	
+
+	DocumentRoot /var/www
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	<Directory "/usr/lib/cgi-bin">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    Alias /doc/ "/usr/share/doc/"
+    <Directory "/usr/share/doc/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    </Directory>
+
+    Alias /mono/ "/var/www/mono/"
+    <Directory "/var/www/mono/">
+       Options Indexes MultiViews FollowSymLinks
+       Order allow,deny
+       Allow from all
+    </Directory>
+
+</VirtualHost>
